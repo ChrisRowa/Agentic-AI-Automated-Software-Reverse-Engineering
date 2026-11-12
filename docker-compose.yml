@@ -1,0 +1,65 @@
+services:
+  # ─── PostgreSQL Database ───────────────────────────────────────────────────
+  db:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_USER: reverse_user
+      POSTGRES_PASSWORD: reverse_pass
+      POSTGRES_DB: reverse_engineering_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U reverse_user -d reverse_engineering_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ─── Redis (for background jobs) ──────────────────────────────────────────
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ─── Backend (FastAPI) ────────────────────────────────────────────────────
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://reverse_user:reverse_pass@db:5432/reverse_engineering_db
+      - SYNC_DATABASE_URL=postgresql://reverse_user:reverse_pass@db:5432/reverse_engineering_db
+      - REDIS_URL=redis://redis:6379/0
+      - WORKSPACE_DIR=/app/workspaces
+      - ALLOWED_ORIGINS=http://localhost:5173,http://localhost:3000,http://localhost:80
+    volumes:
+      - workspaces:/app/workspaces
+      - ./backend:/app
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    command: uvicorn backend.main:app --host 0.0.0.0 --port 8000 --reload
+
+  # ─── Frontend (React + Vite) ───────────────────────────────────────────────
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:
+  workspaces:

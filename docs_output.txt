@@ -1,0 +1,23 @@
+﻿=== TABLE 0 ===
+ROW 0 | Addition: Addition to our project
+ROW 1 | Addition: Counterfactual Verification: Add an agent that automatically perturbs inputs or code paths and executes the program to test the discovered causal edges, confirming true dependencies and catching spurious ones.
+ROW 2 | Addition: Extend the Reversa concept by combining multi-agent reverse engineering with static program analysis, Program Knowledge Graphs, call/dependency/data-flow analysis, program slicing, RAG and an evidence-based Verification Agent to produce a complete and quantitatively evaluated System Reconstruction Report.
+ROW 3 | Addition: Extend traditional ML-based code comprehension into an Agentic AI-based, repository-level reverse-engineering system by integrating static program analysis, Program Knowledge Graphs, RAG, specialized analysis agents, and an evidence-based Verification Agent. This enables deeper cross-file/cross-function understanding, architecture recovery, program slicing, dependency analysis, and verified system reconstruction rather than focusing on individual code-comprehension tasks.
+ROW 4 | Addition: Extend to complete repository-level reverse engineering using Program Knowledge Graph, call/dependency analysis, slicing, RAG and Verification Agent.
+ROW 5 | Addition: Reverse Traceability & Change Impact Analysis , Self-Adaptive Analysis Strategy, Repository-Specific Evidence Selection, Traceability as a Reverse-Engineering Layer
+ROW 6 | Addition: Adaptive Model/Prompt Routing + hierarchical repository summarization, selecting analysis strategy based on code complexity/language and generating function ΓåÆ module ΓåÆ system-level understanding.
+ROW 7 | Addition: Adaptive Strategy Selection Agent that chooses Full/Reduced/Hierarchical analysis based on code size and complexity, then extends summaries into complete system reconstruction.
+ROW 8 | Addition: Path-Aware Traceability ΓÇô combine LLM semantic matching with call/dependency graphs to verify the complete documentationΓåÆimplementation path and support change-impact analysis.
+ROW 9 | Addition: Repository-Adaptive Traceability ΓÇô automatically adapt trace-link recovery to a new repository using its coding patterns, architecture and dependency structure, with verified links used for continuous improvement.
+ROW 10 | Addition: Multi-language graph analysis + Agent-based graph traversal + version-aware code evolution analysis + explainable dependency paths.
+ROW 11 | Addition: Specialized reverse-engineering agents + evidence-based communication + agent disagreement resolution + confidence-aware results.
+ROW 12 | Addition: Relationship-Aware Context Selection ΓÇô combine callers, callees, inheritance, dependencies and data flow to provide richer context for repository-level reverse engineering.
+ROW 13 | Addition: Code-Grounded UML Reconstruction ΓÇô generate sequence diagrams from call graphs/control flow and automatically validate UML interactions against the extracted source-code structure.
+ROW 14 | Addition: Multi-Level Software Reconstruction ΓÇô extend analysis from functions to classes, modules, dependencies, program behavior and complete system architecture, with support for multiple programming languages.
+ROW 15 | Addition: Hierarchical Program Slicing ΓÇô extend slicing from statements to functions, classes, modules and complete behavioral paths, using the resulting slices for UML, documentation and change-impact analysis.
+ROW 16 | Addition: Compiler-Aware Semantic Reconstruction ΓÇô distinguish compiler/optimization-induced differences from actual behavioral differences and use semantic equivalence to improve reverse-engineered system understanding.
+ROW 17 | Addition: Intent-aware retrieval + evidence-linked results + adaptive stopping + conflict-aware retrieval for reverse engineering.
+ROW 18 | Addition: Repository-Adaptive Semantic Ontology ΓÇô automatically learn project-specific terminology, classes, APIs and concepts, then use them for bidirectional traceability and requirement ΓåÆ code ΓåÆ dependency ΓåÆ behavior reconstruction.
+ROW 19 | Addition: Hierarchical Repository Reconstruction ΓÇô extend analysis from function ΓåÆ class ΓåÆ file ΓåÆ module ΓåÆ subsystem ΓåÆ complete system architecture, combining structural and behavioral relationships.
+ROW 20 | Addition: Hierarchical Code Understanding ΓÇô extend analysis from function ΓåÆ class ΓåÆ file ΓåÆ module ΓåÆ subsystem ΓåÆ complete application, enabling cross-function and system-level reconstruction.
+

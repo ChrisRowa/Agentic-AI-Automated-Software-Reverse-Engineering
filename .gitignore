@@ -1,0 +1,117 @@
+# =============================================================================
+# Python / Backend
+# =============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+eggs/
+wheels/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Testing, coverage & type checking
+.pytest_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.ruff_cache/
+.pyre/
+.pytype/
+nosetests.xml
+
+# Celery & Redis local state
+celerybeat-schedule
+celerybeat-schedule.*
+celerybeat.pid
+dump.rdb
+
+# =============================================================================
+# Node.js / Frontend (React + Vite + TypeScript)
+# =============================================================================
+node_modules/
+dist-ssr/
+*.local
+*.tsbuildinfo
+.vite/
+.eslintcache
+
+# Package manager debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# =============================================================================
+# Environment Variables & Secrets
+# =============================================================================
+.env
+.env.*
+!.env.example
+!.env.template
+
+# =============================================================================
+# Project Runtime Data & Databases
+# =============================================================================
+# Uploaded archives, extracted source code, and vector/embedding indexes
+workspaces/
+
+# Local SQLite fallback databases (e.g., reverse_engineering.db)
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+
+# =============================================================================
+# Logs
+# =============================================================================
+logs/
+*.log
+
+# =============================================================================
+# IDEs, Editors & OS
+# =============================================================================
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*~
+
+# macOS / Windows
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+

@@ -1,0 +1,282 @@
+﻿Total pages: 9
+--- PAGE 1 ---
+Reverse Engineering from Code using Agentic AI
+1. Project Overview
+Software companies often have large and old software projects whose original documentation, design
+diagrams, and detailed explanations are missing or outdated. Understanding such software requires
+developers to manually read thousands of lines of code and identify how different files, functions, classes,
+and modules are connected.
+The proposed project, ΓÇ£Reverse Engineering from Code using Agentic AI,ΓÇ¥ aims to develop an AI-based
+system that automatically analyzes an existing software codebase and converts it into an understandable
+representation of the software.
+The system will accept a source-code project such as a ZIP file or repository and automatically identify the
+structure, dependencies, function relationships, data flow, control flow, and important modules. Using 
+Large Language Models (LLMs), Retrieval-Augmented Generation (RAG), program analysis, and
+LangGraph-based multi-agent orchestration, the system will generate human-readable explanations and
+reverse-engineering artifacts.
+The main goal is to help developers understand an unfamiliar or legacy software system without manually
+studying the entire codebase.
+2. Problem Statement
+When developers receive an existing or legacy software project, they may not know:
+What the software actually does.
+Which files belong to which module.
+Which functions call other functions.
+How data moves through the system.
+Which components depend on each other .
+How different modules interact.
+What the purpose of an individual function or class is.
+What the overall architecture of the software looks like.
+Traditional reverse-engineering tools can extract structural information, but the information may still be
+difficult for a developer to understand. On the other hand, an LLM alone may generate incorrect
+explanations because it does not always have complete knowledge of the relationships within a large
+codebase.
+Therefore, this project proposes a hybrid and agent
+
+--- PAGE 2 ---
+3. Proposed Solution
+The proposed system will take an existing source-code repository as input and perform automated software
+analysis.
+The workflow will be:
+Source Code ΓåÆ Code Parsing ΓåÆ Program Analysis ΓåÆ Knowledge Representation ΓåÆ RAG ΓåÆ LangGraph
+Agents ΓåÆ Verification ΓåÆ Reverse-Engineering Output
+The system will combine structural information obtained from the code with AI-based semantic
+understanding.
+4. How the System Works
+Step 1 ΓÇô Upload Existing Code
+The user uploads:
+A ZIP file containing the source code, or
+An existing software repository.
+For example:
+Project
+ Γö£ΓöÇΓöÇ login.py
+ Γö£ΓöÇΓöÇ database.py
+ Γö£ΓöÇΓöÇ payment.py
+ Γö£ΓöÇΓöÇ user.py
+ ΓööΓöÇΓöÇ app.py
+Step 2 ΓÇô Code Extraction and Identification
+The system extracts the project and identifies:
+Programming languages
+Files
+Classes
+Functions
+Methods
+Imports
+Modules
+ΓÇó 
+ΓÇó 
+ΓÇó 
+ΓÇó 
+ΓÇó 
+ΓÇó 
+ΓÇó 
+ΓÇó 
+ΓÇó 
+2
+
+--- PAGE 3 ---
+This provides an initial overview of the software.
+Step 3 ΓÇô Structural Code Analysis
+The system uses program-analysis techniques to understand the structure of the code.
+It can extract:
+Abstract Syntax Tree (AST) ΓÇô shows how the source code is structured.
+Call Graph ΓÇô shows which function calls which other function.
+Example:
+login()
+   Γåô
+validateUser()
+   Γåô
+findUser()
+   Γåô
+database()
+Dependency Graph ΓÇô shows relationships between files/modules.
+app.py
+  Γåô
+login.py
+  Γåô
+database.py
+Control Flow ΓÇô identifies possible execution paths.
+Data Flow ΓÇô identifies how important variables and information move through the program.
+Step 4 ΓÇô Create a Software Knowledge Representation
+The extracted information is combined into a structured representation of the software.
+For example:
+3
+
+--- PAGE 4 ---
+User
+  Γåô
+Login
+  Γåô
+Authentication
+  Γåô
+Database
+This allows the AI system to understand not only individual code snippets but also how different parts of the
+software are related.
+Step 5 ΓÇô RAG-Based Code Retrieval
+Large repositories may contain thousands or millions of lines of code. Sending the entire repository to an
+LLM is inefficient and may exceed its context limits.
+Therefore, the system stores relevant code representations as searchable information.
+When a user asks:
+ΓÇ£How does the login process work?ΓÇ¥
+the system retrieves only the relevant files, functions, and relationships.
+For example:
+login.py
+authentication.py
+user.py
+database.py
+These relevant pieces are then provided to the AI agents.
+Step 6 ΓÇô LangGraph-Based Multi-Agent Analysis
+The project will use LangGraph to coordinate multiple specialized AI agents.
+Instead of using one AI agent for every task, different agents will perform different responsibilities.
+Code Understanding Agent
+Understands what a function, class, or module does.
+4
+
+--- PAGE 5 ---
+Dependency Agent
+Identifies relationships between files, classes, modules, and functions.
+Summarization Agent
+Converts complicated source code into simple natural-language explanations.
+Program Analysis Agent
+Uses structural information such as control flow, data flow, and program dependencies.
+UML/Architecture Agent
+Generates diagrams such as class, sequence, dependency, and architecture diagrams.
+Program Slicing Agent
+Identifies the relevant parts of the program related to a particular variable, function, feature, or operation.
+Documentation Agent
+Automatically generates documentation for the analyzed codebase.
+Verification Agent
+Checks whether AI-generated explanations are supported by the actual source code and analysis results.
+7. Why LangGraph?
+LangGraph is used because the proposed system requires a multi-step workflow in which different agents
+perform different tasks and may need to communicate with each other .
+For example:
+User Question
+      Γåô
+LangGraph Controller
+      Γåô
+Code Retrieval
+      Γåô
+Code Analysis Agent
+      Γåô
+Dependency Agent
+      Γåô
+5
+
+--- PAGE 6 ---
+Summary Agent
+      Γåô
+Verification Agent
+      Γåô
+Final Answer
+If the verification agent detects an error , the workflow can return to the relevant agent and regenerate the
+result.
+Therefore, the system is not simply an LLM chatbot; it is an agentic AI workflow for software analysis.
+8. Main Outputs of the System
+After analysing the codebase, the system can provide:
+Project Overview
+A simple explanation of what the software does.
+File and Module Explanation
+Explains the purpose of important files and modules.
+Function and Class Summaries
+Explains individual components in understandable language.
+Dependency Graph
+Shows how different software components are connected.
+Call Graph
+Shows function-to-function interactions.
+Data and Control Flow
+Shows how information and execution move through the system.
+UML Diagrams
+Automatically generates diagrams such as class and sequence diagrams.
+6
+
+--- PAGE 7 ---
+Architecture Diagram
+Provides a high-level view of the software system.
+Program Slices
+Shows only the code relevant to a particular function, variable, or feature.
+Automatic Documentation
+Generates documentation for an existing codebase.
+Interactive Code Q&A
+Allows the developer to ask questions such as:
+ΓÇ£Where is authentication implemented?ΓÇ¥
+ΓÇ£Which files are related to payment?ΓÇ¥
+ΓÇ£What happens when the user clicks Login?ΓÇ¥
+ΓÇ£Which functions depend on this database method?ΓÇ¥
+The system answers using the analysed codebase as evidence.
+9. Example
+Suppose the user uploads an old employee-management application.
+The system may identify:
+Frontend
+   Γåô
+Login
+   Γåô
+Authentication
+   Γåô
+Employee Service
+   Γåô
+Database
+The user can then ask:
+7
+
+--- PAGE 8 ---
+ΓÇ£Explain the login process.ΓÇ¥
+The system analyzes the relevant code and may produce:
+1. User enters username and password.
+2. Login controller receives the request.
+3. Authentication service validates the credentials.
+4. User information is retrieved from the database.
+5. Authentication status is returned.
+6. The user is allowed or denied access.
+The system can also generate the corresponding sequence diagram and identify the source files
+responsible for each step.
+10. Research Contribution
+Existing research has explored individual tasks such as:
+Code summarization
+Program slicing
+Decompilation
+UML generation
+Code understanding
+Requirements-to-code traceability
+However , these tasks are generally addressed separately.
+The proposed project aims to combine multiple reverse-engineering capabilities into a single agentic
+framework.
+Another important contribution is the use of a verification-driven architecture. Since LLMs can generate
+incorrect or unsupported explanations, the proposed system will use program-analysis evidence and a
+verification agent to check AI-generated results against the source code.
+Thus, the project combines:
+Traditional Program Analysis + RAG + LLM + LangGraph Multi-Agent System + Verification
+to create a more reliable reverse-engineering platform.
+ΓÇó 
+ΓÇó 
+ΓÇó 
+ΓÇó 
+ΓÇó 
+ΓÇó 
+8
+
+--- PAGE 9 ---
+11. Target Users
+The system can be useful for:
+Software developers
+Maintenance teams
+Developers working with legacy systems
+Software engineering students
+Organizations with poorly documented projects
+Teams taking over projects developed by previous developers
+12. Expected Outcome
+The final system will provide an interactive dashboard where a developer can upload an unfamiliar
+codebase and obtain a structured and understandable representation of the software.
+Instead of manually reading thousands of lines of source code, the developer can use the system to quickly
+understand:
+What the software does ΓåÆ how it is structured ΓåÆ how components interact ΓåÆ how data flows ΓåÆ
+which code implements a feature ΓåÆ and how the entire system works.
+The project therefore aims to reduce the time and effort required for software maintenance, program
+comprehension, documentation, and reverse engineering.
+ΓÇó 
+ΓÇó 
+ΓÇó 
+ΓÇó 
+ΓÇó 
+ΓÇó 
+9
+
